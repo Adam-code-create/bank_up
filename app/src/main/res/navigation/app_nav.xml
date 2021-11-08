@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/authScreen">
+
+    <fragment
+        android:id="@+id/registerScreen"
+        android:name="uz.gita.bankup.presenter.screens.auth.RegisterScreen"
+        android:label="RegisterScreen" >
+        <action
+            android:id="@+id/action_registerScreen_to_smsVerifyScreen"
+            app:destination="@id/smsVerifyScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/smsVerifyScreen"
+        android:name="uz.gita.bankup.presenter.screens.auth.SmsVerifyScreen"
+        android:label="SmsVerifyScreen" >
+        <action
+            android:id="@+id/action_smsVerifyScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/myCardsScreen"
+        android:name="uz.gita.bankup.presenter.screens.card.MyCardsScreen"
+        android:label="MyCardsScreen" >
+        <action
+            android:id="@+id/action_myCardsScreen_to_addCardScreen"
+            app:destination="@id/addCardScreen" />
+        <action
+            android:id="@+id/action_myCardsScreen_to_editCardScreen"
+            app:destination="@id/editCardScreen" />
+        <action
+            android:id="@+id/action_myCardsScreen_to_transferMoneyScreen"
+            app:destination="@id/transferMoneyScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCardScreen"
+        android:name="uz.gita.bankup.presenter.screens.card.AddCardScreen"
+        android:label="AddCardScreen" >
+        <action
+            android:id="@+id/action_addCardScreen_to_verifyCardScreen"
+            app:destination="@id/verifyCardScreen"
+            app:popUpTo="@id/addCardScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyCardScreen"
+        android:name="uz.gita.bankup.presenter.screens.card.VerifyCardScreen"
+        android:label="VerifyCardScreen" />
+    <fragment
+        android:id="@+id/editCardScreen"
+        android:name="uz.gita.bankup.presenter.screens.card.EditCardScreen"
+        android:label="EditCardScreen" />
+    <fragment
+        android:id="@+id/authScreen"
+        android:name="uz.gita.bankup.presenter.screens.auth.AuthScreen"
+        android:label="AuthScreen" >
+        <action
+            android:id="@+id/action_authScreen_to_registerScreen"
+            app:destination="@id/registerScreen" />
+        <action
+            android:id="@+id/action_authScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="uz.gita.bankup.presenter.screens.auth.LoginScreen"
+        android:label="LoginScreen" >
+        <action
+            android:id="@+id/action_loginScreen_to_smsVerifyScreen"
+            app:destination="@id/smsVerifyScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_resetScreen"
+            app:destination="@id/resetScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="uz.gita.bankup.presenter.screens.MainScreen"
+        android:label="MainScreen" >
+        <action
+            android:id="@+id/action_mainScreen_to_myCardsScreen"
+            app:destination="@id/myCardsScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_editAccountScreen"
+            app:destination="@id/editAccountScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="uz.gita.bankup.presenter.screens.SplashScreen"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splashScreen_to_authScreen"
+            app:destination="@id/authScreen" />
+        <action
+            android:id="@+id/action_splashScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetScreen"
+        android:name="uz.gita.bankup.presenter.screens.auth.ResetScreen"
+        android:label="ResetScreen" />
+    <fragment
+        android:id="@+id/editAccountScreen"
+        android:name="uz.gita.bankup.presenter.screens.EditAccountScreen"
+        android:label="EditAccountScreen" />
+    <fragment
+        android:id="@+id/transferMoneyScreen"
+        android:name="uz.gita.bankup.presenter.screens.transfer.TransferMoneyScreen"
+        android:label="TransferMoneyScreen" />
+</navigation>
